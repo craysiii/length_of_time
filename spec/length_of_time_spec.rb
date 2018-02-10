@@ -182,4 +182,38 @@ RSpec.describe Numeric do
       expect(1.5.fortnights).to eq Numeric::SECONDS_PER_FORTNIGHT * 1.5
     end
   end
+
+  context 'Unit conversions' do
+    it 'give the correct amount of milliseconds in 5 seconds' do
+      expect(5.seconds(into: :milliseconds)).to eq 5000
+    end
+
+    it 'give the correct amount of seconds in 1 millisecond' do
+      expect(1.millisecond(into: :seconds)).to eq 0.001
+    end
+
+    it 'give the correct amount of seconds in 60 minutes' do
+      expect(60.minutes(into: :seconds)).to eq 3600
+    end
+
+    it 'give the correct amount of minutes in 60 seconds' do
+      expect(60.seconds(into: :minutes)).to eq 1
+    end
+
+    it 'give the correct amount of minutes in 2 hours' do
+      expect(2.hour(into: :minutes)).to eq 120
+    end
+
+    it 'give the correct amount of hours in 2 days' do
+      expect(2.days(into: :hours)).to eq 48
+    end
+
+    it 'give the correct amount of days in 1.5 weeks' do
+      expect(1.5.weeks(into: :days)).to eq 10.5
+    end
+
+    it 'give the correct amount of weeks in 2 fortnights' do
+      expect(2.fortnights(into: :weeks)).to eq 4
+    end
+  end
 end
