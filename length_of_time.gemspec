@@ -14,11 +14,9 @@ Gem::Specification.new do |spec|
   spec.license       = 'MIT'
 
   spec.files         = Dir['bin/*'] +
-                       Dir['lib/**/*.rb']
+                       Dir['lib/**/*.rb'] << 'LICENSE.txt' << 'README.md'
 
   spec.require_paths = ['lib']
-
-  spec.bindir        = 'bin'
 
   spec.add_development_dependency 'bundler', '~> 1.15'
   spec.add_development_dependency 'rake', '~> 10.0'
