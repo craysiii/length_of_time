@@ -4,6 +4,36 @@ RSpec.describe Numeric do
   end
 
   context 'Method definitions' do
+    it 'respond to #milliseconds' do
+      expect(1).to respond_to :milliseconds
+    end
+
+    it 'respond to #seconds' do
+      expect(1).to respond_to :seconds
+    end
+
+    it 'respond to #minutes' do
+      expect(1).to respond_to :minutes
+    end
+
+    it 'respond to #hours' do
+      expect(1).to respond_to :hours
+    end
+
+    it 'respond to #days' do
+      expect(1).to respond_to :days
+    end
+
+    it 'respond to #weeks' do
+      expect(1).to respond_to :weeks
+    end
+
+    it 'respond to #fortnights' do
+      expect(1).to respond_to :fortnights
+    end
+  end
+
+  context 'Method aliases' do
     it 'respond to #millisecond' do
       expect(1).to respond_to :millisecond
     end
@@ -30,36 +60,6 @@ RSpec.describe Numeric do
 
     it 'respond to #fortnight' do
       expect(1).to respond_to :fortnight
-    end
-  end
-
-  context 'Method aliases' do
-    it 'include an alias for #milliseconds' do
-      expect(1).to respond_to :milliseconds
-    end
-
-    it 'include an alias for #seconds' do
-      expect(1).to respond_to :seconds
-    end
-
-    it 'include an alias for #minutes' do
-      expect(1).to respond_to :minutes
-    end
-
-    it 'include an alias for #hours' do
-      expect(1).to respond_to :hours
-    end
-
-    it 'include an alias for #days' do
-      expect(1).to respond_to :days
-    end
-
-    it 'include an alias for #weeks' do
-      expect(1).to respond_to :weeks
-    end
-
-    it 'include an alias for #fortnights' do
-      expect(1).to respond_to :fortnights
     end
   end
 
