@@ -20,7 +20,9 @@ class Numeric
   }.freeze
 
   TIME.each_key do |method|
-    define_method(method) { |into: :seconds| self * TIME[method] / TIME[into] }
+    define_method(method) do |opt = { in: :seconds }|
+      self * TIME[method] / TIME[opt[:in]]
+    end
     alias_method method.to_s.chop, method
   end
 end
