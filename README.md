@@ -1,8 +1,6 @@
 # Length Of Time
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/length_of_time`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A miniature DSL for describing lengths of time. 
 
 ## Installation
 
@@ -22,7 +20,36 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Require the gem:
+
+```ruby
+require 'length_of_time'
+```
+
+Use the various methods that we monkey-patch onto Numeric:
+
+```ruby
+# Default unit to return is :seconds
+puts 10.minutes # => 600.0
+
+# Can also convert into other units of time
+puts 7.days in: :weeks # => 1.0
+
+# Return Floats so that unit conversion does not suffer from Integer division
+puts 10.days in: :weeks # => 1.4285714285714286
+
+# Method calls on Numeric literals can be either singular or plural
+puts 1.hour # => 3600.0
+puts 2.hours # => 7200.0
+
+# When converting into another unit of time, unit must be plural
+puts 500.milliseconds in: :minutes # Correct
+puts 750.milliseconds in: :minute # Incorrect - will give an error
+
+# Full list of units supported:
+# Singular [:millisecond, :second, :minute, :hour, :day, :week, :fortnight]
+# Plural [:milliseconds, :seconds, :minutes, :hours, :days, :weeks, :fortnights] 
+```
 
 ## Development
 
