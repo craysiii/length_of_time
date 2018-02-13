@@ -204,6 +204,10 @@ RSpec.describe Numeric do
       expect(2.days(in: :hours)).to eq 48
     end
 
+    it 'give the correct amount of weeks in 12 days' do
+      expect(12.days(in: :weeks)).to eq 12.0 / 7
+    end
+
     it 'give the correct amount of days in 1.5 weeks' do
       expect(1.5.weeks(in: :days)).to eq 10.5
     end
