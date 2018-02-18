@@ -1,3 +1,4 @@
+# Monkey patching is bad but we do it anyway
 class Numeric
   TIME = {
     milliseconds: 1.0 / 1000,
