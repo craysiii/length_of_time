@@ -10,5 +10,3 @@ require 'length_of_time'
 # (If you use this, don't forget to add pry to your Gemfile!)
 require 'pry'
 Pry.start
-
-
