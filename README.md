@@ -1,5 +1,7 @@
 # Length Of Time
 
+[![Gem Version](https://badge.fury.io/rb/length_of_time.svg)](https://badge.fury.io/rb/length_of_time) [![Build Status](https://travis-ci.org/craysiii/length_of_time.svg?branch=master)](https://travis-ci.org/craysiii/length_of_time)  [![Maintainability](https://api.codeclimate.com/v1/badges/3f8d78426eef39fd135c/maintainability)](https://codeclimate.com/github/craysiii/length_of_time/maintainability)
+
 A miniature DSL for describing lengths of time. 
 
 ## Installation
