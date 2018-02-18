@@ -1,4 +1,12 @@
 RSpec.describe Numeric do
+  let(:millisecond) { Numeric::TIME[:milliseconds] }
+  let(:second)      { Numeric::TIME[:seconds] }
+  let(:minute)      { Numeric::TIME[:minutes] }
+  let(:hour)        { Numeric::TIME[:hours] }
+  let(:day)         { Numeric::TIME[:days] }
+  let(:week)        { Numeric::TIME[:weeks] }
+  let(:fortnight)   { Numeric::TIME[:fortnights] }
+
   context 'Method definitions' do
     it 'respond to #milliseconds' do
       expect(1).to respond_to :milliseconds
@@ -61,31 +69,31 @@ RSpec.describe Numeric do
 
   context 'Unit definitions' do
     it 'give the correct amount of seconds in a millisecond' do
-      expect(1.millisecond).to eq Numeric::SECONDS_PER_MILLISECOND
+      expect(1.millisecond).to eq millisecond
     end
 
     it 'give the correct amount of seconds in a second' do
-      expect(1.second).to eq Numeric::SECONDS_PER_SECOND
+      expect(1.second).to eq second
     end
 
     it 'give the correct amount of seconds in a minute' do
-      expect(1.minute).to eq Numeric::SECONDS_PER_MINUTE
+      expect(1.minute).to eq minute
     end
 
     it 'give the correct amount of seconds in a hour' do
-      expect(1.hour).to eq Numeric::SECONDS_PER_HOUR
+      expect(1.hour).to eq hour
     end
 
     it 'give the correct amount of seconds in a day' do
-      expect(1.day).to eq Numeric::SECONDS_PER_DAY
+      expect(1.day).to eq day
     end
 
     it 'give the correct amount of seconds in a week' do
-      expect(1.week).to eq Numeric::SECONDS_PER_WEEK
+      expect(1.week).to eq week
     end
 
     it 'give the correct amount of seconds in a fortnight' do
-      expect(1.fortnight).to eq Numeric::SECONDS_PER_FORTNIGHT
+      expect(1.fortnight).to eq fortnight
     end
   end
 
@@ -121,61 +129,61 @@ RSpec.describe Numeric do
 
   context 'Integers' do
     it 'give the correct amount of seconds in 5 milliseconds' do
-      expect(5.milliseconds).to eq Numeric::SECONDS_PER_MILLISECOND * 5
+      expect(5.milliseconds).to eq millisecond * 5
     end
 
     it 'give the correct amount of seconds in 5 seconds' do
-      expect(5.seconds). to eq Numeric::SECONDS_PER_SECOND * 5
+      expect(5.seconds). to eq second * 5
     end
 
     it 'give the correct amount of seconds in 5 minutes' do
-      expect(5.minutes).to eq Numeric::SECONDS_PER_MINUTE * 5
+      expect(5.minutes).to eq minute * 5
     end
 
     it 'give the correct amount of seconds in 5 hours' do
-      expect(5.hours).to eq Numeric::SECONDS_PER_HOUR * 5
+      expect(5.hours).to eq hour * 5
     end
 
     it 'give the correct amount of seconds in 5 days' do
-      expect(5.day).to eq Numeric::SECONDS_PER_DAY * 5
+      expect(5.day).to eq day * 5
     end
 
     it 'give the correct amount of seconds in 5 weeks' do
-      expect(5.weeks).to eq Numeric::SECONDS_PER_WEEK * 5
+      expect(5.weeks).to eq week * 5
     end
 
     it 'give the correct amount of seconds in 5 fortnights' do
-      expect(5.fortnights).to eq Numeric::SECONDS_PER_FORTNIGHT * 5
+      expect(5.fortnights).to eq fortnight * 5
     end
   end
 
   context 'Floats' do
     it 'give the correct amount of seconds in 1.5 milliseconds' do
-      expect(1.5.milliseconds).to eq Numeric::SECONDS_PER_MILLISECOND * 1.5
+      expect(1.5.milliseconds).to eq millisecond * 1.5
     end
 
     it 'give the correct amount of seconds in 1.5 seconds' do
-      expect(1.5.seconds).to eq Numeric::SECONDS_PER_SECOND * 1.5
+      expect(1.5.seconds).to eq second * 1.5
     end
 
     it 'give the correct amount of seconds in 1.5 minutes' do
-      expect(1.5.minutes).to eq Numeric::SECONDS_PER_MINUTE * 1.5
+      expect(1.5.minutes).to eq minute * 1.5
     end
 
     it 'give the correct amount of seconds in 1.5 hours' do
-      expect(1.5.hours).to eq Numeric::SECONDS_PER_HOUR * 1.5
+      expect(1.5.hours).to eq hour * 1.5
     end
 
     it 'give the correct amount of seconds in 1.5 days' do
-      expect(1.5.days).to eq Numeric::SECONDS_PER_DAY * 1.5
+      expect(1.5.days).to eq day * 1.5
     end
 
     it 'give the correct amount of seconds in 1.5 weeks' do
-      expect(1.5.weeks).to eq Numeric::SECONDS_PER_WEEK * 1.5
+      expect(1.5.weeks).to eq week * 1.5
     end
 
     it 'give the correct amount of seconds in 1.5 fortnights' do
-      expect(1.5.fortnights).to eq Numeric::SECONDS_PER_FORTNIGHT * 1.5
+      expect(1.5.fortnights).to eq fortnight * 1.5
     end
   end
 
